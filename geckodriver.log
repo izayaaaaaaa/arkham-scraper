@@ -1,0 +1,18 @@
+1715073070670	geckodriver	INFO	Listening on 127.0.0.1:51689
+1715073073729	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "51690" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\franc\\AppData\\Local\\Temp\\rust_mozprofile8NJzQB"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+Dynamically enable window occlusion 0
+1715073074492	Marionette	INFO	Marionette enabled
+1715073074614	Marionette	INFO	Listening on port 51702
+WebDriver BiDi listening on ws://127.0.0.1:51690
+Read port: 51702
+1715073074916	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1715073074947	RemoteAgent	INFO	Proxy settings initialised: {"proxyType":"manual","httpProxy":"localhost:8084","sslProxy":"localhost:8084"}
+DevTools listening on ws://127.0.0.1:51690/devtools/browser/ced59b98-b2ec-4f27-b267-fd660c3a9aaf
+1715073104748	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+1715073123422	Marionette	INFO	Stopped listening on port 51702
+JavaScript warning: https://platform.arkhamintelligence.com/_next/static/chunks/8591-1c8d4ce770b9a0d6.js, line 5: Script terminated by timeout at:
+e@https://platform.arkhamintelligence.com/_next/static/chunks/8591-1c8d4ce770b9a0d6.js:5:451060
+
+Dynamically enable window occlusion 1

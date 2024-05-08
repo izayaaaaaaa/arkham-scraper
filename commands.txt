@@ -1,0 +1,5 @@
+netstat -aon | findstr :8081
+
+python .\scraper.py
+
+total lines of 13935
