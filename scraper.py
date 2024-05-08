@@ -44,7 +44,7 @@ def scrape_data():
     # Navigate to the page
     driver.get(url)
 
-    wait = WebDriverWait(driver, 10)
+    wait = WebDriverWait(driver, 20)
 
     # Click on the OUTFLOW tab
     outflow_tab = wait.until(EC.visibility_of_element_located((By.XPATH, "//div[text()='OUTFLOW']")))
@@ -106,7 +106,7 @@ def scrape_data():
                 print(f"No request found for offset {offset}")
 
         # log the found network traffic to a json file
-        with open("network_traffic3.json", "w", encoding='utf-8') as f:
+        with open("network_traffic_four.json", "w", encoding='utf-8') as f:
             json.dump(traffic, f, ensure_ascii=False, indent=4)
         # if there's no error, print success message
         print("Scraping successful!")

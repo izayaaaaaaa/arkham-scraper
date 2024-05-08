@@ -1,17 +1,30 @@
-1715073070670	geckodriver	INFO	Listening on 127.0.0.1:51689
-1715073073729	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "51690" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\franc\\AppData\\Local\\Temp\\rust_mozprofile8NJzQB"
+1715142751341	geckodriver	INFO	Listening on 127.0.0.1:52917
+1715142754394	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "52918" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\franc\\AppData\\Local\\Temp\\rust_mozprofile6V1iQf"
 console.warn: services.settings: Ignoring preference override of remote settings server
 console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
 Dynamically enable window occlusion 0
-1715073074492	Marionette	INFO	Marionette enabled
-1715073074614	Marionette	INFO	Listening on port 51702
-WebDriver BiDi listening on ws://127.0.0.1:51690
-Read port: 51702
-1715073074916	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
-1715073074947	RemoteAgent	INFO	Proxy settings initialised: {"proxyType":"manual","httpProxy":"localhost:8084","sslProxy":"localhost:8084"}
-DevTools listening on ws://127.0.0.1:51690/devtools/browser/ced59b98-b2ec-4f27-b267-fd660c3a9aaf
-1715073104748	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
-1715073123422	Marionette	INFO	Stopped listening on port 51702
+1715142755104	Marionette	INFO	Marionette enabled
+1715142755231	Marionette	INFO	Listening on port 52930
+WebDriver BiDi listening on ws://127.0.0.1:52918
+Read port: 52930
+1715142755525	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1715142755551	RemoteAgent	INFO	Proxy settings initialised: {"proxyType":"manual","httpProxy":"localhost:8081","sslProxy":"localhost:8081"}
+DevTools listening on ws://127.0.0.1:52918/devtools/browser/ede13020-628f-49cd-8135-3659e8b1f8f2
+Exiting due to channel error.
+1715142795856	geckodriver	INFO	Listening on 127.0.0.1:53118
+1715142798887	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "53119" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\franc\\AppData\\Local\\Temp\\rust_mozprofileowiqZg"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+Dynamically enable window occlusion 0
+1715142799341	Marionette	INFO	Marionette enabled
+1715142799444	Marionette	INFO	Listening on port 53127
+WebDriver BiDi listening on ws://127.0.0.1:53119
+Read port: 53127
+1715142799681	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1715142799704	RemoteAgent	INFO	Proxy settings initialised: {"proxyType":"manual","httpProxy":"localhost:8081","sslProxy":"localhost:8081"}
+DevTools listening on ws://127.0.0.1:53119/devtools/browser/e43e0ee3-61f6-4855-a924-e61550a180cf
+1715142829363	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+1715142845760	Marionette	INFO	Stopped listening on port 53127
 JavaScript warning: https://platform.arkhamintelligence.com/_next/static/chunks/8591-1c8d4ce770b9a0d6.js, line 5: Script terminated by timeout at:
 e@https://platform.arkhamintelligence.com/_next/static/chunks/8591-1c8d4ce770b9a0d6.js:5:451060
 
