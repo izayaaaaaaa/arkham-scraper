@@ -53,7 +53,7 @@ def scrape_data():
     driver.execute_script("arguments[0].click();", outflow_tab)
 
     try: 
-        for page_number in range(1, 6):
+        for page_number in range(1, 3):
             # Click on the page input field and enter the page number
             page_input_xpath = '/html/body/div[1]/div/div[3]/div[1]/a[1]/div/div[2]/div[1]/div[4]/h1/div/div/div/div/div/input'
             page_input = wait.until(EC.visibility_of_element_located((By.XPATH, page_input_xpath)))
@@ -106,7 +106,7 @@ def scrape_data():
                 print(f"No request found for offset {offset}")
 
         # log the found network traffic to a json file
-        with open("network_traffic_four.json", "w", encoding='utf-8') as f:
+        with open("demo.json", "w", encoding='utf-8') as f:
             json.dump(traffic, f, ensure_ascii=False, indent=4)
         # if there's no error, print success message
         print("Scraping successful!")
