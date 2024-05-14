@@ -73,23 +73,8 @@ def scrape_data():
         # Retrieve the captured network traffic
         time.sleep(10)  # Wait for the network traffic to be captured
         traffic = proxy.har
-
-        # array of requests each differing by offset! by 16s
-        # request_url = 'https://api.arkhamintelligence.com/transfers?base=binance&flow=all&usdGte=0.1&sortKey=time&sortDir=desc&limit=16&offset=0'
-
-        # request_url = 'https://api.arkhamintelligence.com/transfers?sortKey=time&sortDir=desc&limit=16'
-
-        # Analyze the network traffic to find the specific request
-        # for entry in traffic['log']['entries']:
-        #     if request_url in entry['request']['url']:
-        #         print(entry['request']['url'])
-        #         # Check if 'text' attribute exists in the response content
-        #         if 'text' in entry['response']['content']:
-        #             print(entry['response']['content']['text'])
-        #         else:
-        #             print("Response content does not contain text.")
-        # Analyze the network traffic to find the specific requests
-        for i in range(5):  # Iterate 625 times
+        
+        for i in range(3):  # Iterate 625 times
             offset = i * 16
             request_url = f'https://api.arkhamintelligence.com/transfers?sortKey=time&sortDir=desc&limit=16&offset={offset}&flow=out&base=binance&usdGte=0.1'
             found = False
@@ -120,8 +105,9 @@ def scrape_data():
         server.stop()
         # time.sleep(120)  # Delay for 2 minutes
 
+
 # Main execution
 if __name__ == "__main__":
     # download_folder = "/Users/fjnervida/Documents"  # path of download folder
-    download_folder = "C:\\Users\\franc\\Repositories\\arkham-scraper"
+    # download_folder = "C:\\Users\\franc\\Repositories\\arkham-scraper"
     scrape_data()

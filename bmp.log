@@ -1,81 +1,19 @@
-[INFO  2024-05-08T13:49:10,809 net.lightbody.bmp.proxy.Main] (main) Starting BrowserMob Proxy version 2.1.4 
-[INFO  2024-05-08T13:49:10,885 org.eclipse.jetty.util.log] (main) jetty-7.x.y-SNAPSHOT 
-[INFO  2024-05-08T13:49:11,524 org.eclipse.jetty.util.log] (main) started o.e.j.s.ServletContextHandler{/,null} 
-[INFO  2024-05-08T13:49:11,730 org.eclipse.jetty.util.log] (main) Started SelectChannelConnector@0.0.0.0:8080 
-[INFO  2024-05-08T13:49:13,836 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp1489933928-19) Starting proxy at address: 0.0.0.0/0.0.0.0:8081 
-[INFO  2024-05-08T13:49:13,911 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp1489933928-19) Proxy listening with TCP transport 
-[INFO  2024-05-08T13:49:15,190 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp1489933928-19) Proxy started at address: /0:0:0:0:0:0:0:0:8081 
-[WARN  2024-05-08T13:49:25,719 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-0) No content type specified in response from /cdn-cgi/challenge-platform/scripts/jsd/main.js. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:26,083 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-5) No content type specified in response from /user/cookie_preference. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:26,085 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-4) No content type specified in response from /translate/dict?token=&knownLanguage=false. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:26,087 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-3) No content type specified in response from /user/null/is_finalised. Content will be treated as application/octet-stream 
-[INFO  2024-05-08T13:49:26,508 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-0) (NEGOTIATING_CONNECT) [id: 0x41c5e1d1, L:/127.0.0.1:8081 - R:/127.0.0.1:57979]: An IOException occurred on ClientToProxyConnection: An established connection was aborted by the software in your host machine 
-[INFO  2024-05-08T13:49:26,508 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-6) (NEGOTIATING_CONNECT) [id: 0xce059f55, L:/127.0.0.1:8081 - R:/127.0.0.1:57977]: An IOException occurred on ClientToProxyConnection: An established connection was aborted by the software in your host machine 
-[INFO  2024-05-08T13:49:26,511 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-0) (DISCONNECTED) [id: 0xfdc8d193, L:0.0.0.0/0.0.0.0:57982]: Connection to upstream server failed java.nio.channels.ClosedChannelException: null
-	at io.netty.handler.ssl.SslHandler.channelInactive(...)(Unknown Source) ~[browsermob-dist-2.1.4.jar:?]
+[INFO  2024-05-14T11:19:45,127 net.lightbody.bmp.proxy.Main] (main) Starting BrowserMob Proxy version 2.1.4 
+[INFO  2024-05-14T11:19:45,185 org.eclipse.jetty.util.log] (main) jetty-7.x.y-SNAPSHOT 
+[INFO  2024-05-14T11:19:45,778 org.eclipse.jetty.util.log] (main) started o.e.j.s.ServletContextHandler{/,null} 
+[WARN  2024-05-14T11:19:45,947 org.eclipse.jetty.util.log] (main) FAILED SelectChannelConnector@0.0.0.0:8080: java.net.BindException: Address already in use: bind 
+[WARN  2024-05-14T11:19:45,948 org.eclipse.jetty.util.log] (main) FAILED org.eclipse.jetty.server.Server@2cc44ad: java.net.BindException: Address already in use: bind 
+[ERROR 2024-05-14T11:19:45,948 net.lightbody.bmp.proxy.Main] (main) Failed to start Jetty server. Aborting. java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method) ~[?:1.8.0_411]
+	at sun.nio.ch.Net.bind(Net.java:438) ~[?:1.8.0_411]
+	at sun.nio.ch.Net.bind(Net.java:430) ~[?:1.8.0_411]
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:225) ~[?:1.8.0_411]
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74) ~[?:1.8.0_411]
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.open(SelectChannelConnector.java:162) ~[browsermob-dist-2.1.4.jar:?]
+	at org.eclipse.jetty.server.AbstractConnector.doStart(AbstractConnector.java:356) ~[browsermob-dist-2.1.4.jar:?]
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.doStart(SelectChannelConnector.java:240) ~[browsermob-dist-2.1.4.jar:?]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:55) ~[browsermob-dist-2.1.4.jar:?]
+	at org.eclipse.jetty.server.Server.doStart(Server.java:269) ~[browsermob-dist-2.1.4.jar:?]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:55) ~[browsermob-dist-2.1.4.jar:?]
+	at net.lightbody.bmp.proxy.Main.main(Main.java:64) [browsermob-dist-2.1.4.jar:?]
 
-[INFO  2024-05-08T13:49:26,512 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-7) (HANDSHAKING) [id: 0x9631cf09, L:0.0.0.0/0.0.0.0:57984 ! R:static.arkhamintelligence.com/34.36.19.247:443]: Connection to upstream server failed java.nio.channels.ClosedChannelException: null
-	at io.netty.handler.ssl.SslHandler.channelInactive(...)(Unknown Source) ~[browsermob-dist-2.1.4.jar:?]
-
-[WARN  2024-05-08T13:49:26,554 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-4) No content type specified in response from /translate/languages. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:26,555 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-3) No content type specified in response from /intelligence/search?query=. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:26,556 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-5) No content type specified in response from /user. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:26,638 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-5) No content type specified in response from /intelligence/entity/binance. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:26,638 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-4) No content type specified in response from /portfolio/entity/binance?time=1714492800000. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:26,761 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-4) No content type specified in response from /balances/entity/binance. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:26,763 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-7) No content type specified in response from /portfolio/entity/binance?time=1715097600000. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:26,840 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-4) No content type specified in response from /history/entity/binance. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:27,049 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-4) No content type specified in response from /flow/entity/binance. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:27,262 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-4) No content type specified in response from /volume/entity/binance. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:27,327 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-1) Cannot decode unsupported content encoding type br 
-[WARN  2024-05-08T13:49:27,327 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-1) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
-[WARN  2024-05-08T13:49:27,359 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-0) Cannot decode unsupported content encoding type br 
-[WARN  2024-05-08T13:49:27,360 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-0) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
-[WARN  2024-05-08T13:49:27,468 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-4) No content type specified in response from /transfers?base=binance&flow=all&usdGte=0.1&sortKey=time&sortDir=desc&limit=16&offset=0. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:27,534 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-0) Cannot decode unsupported content encoding type br 
-[WARN  2024-05-08T13:49:27,535 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-0) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
-[WARN  2024-05-08T13:49:27,670 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-7) No content type specified in response from /loans/entity/binance. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:27,676 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-4) No content type specified in response from /explorer_chat?entityID=binance. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:28,369 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-3) No content type specified in response from /user/entities/binance/is_not_viewable. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:28,374 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-4) No content type specified in response from /user/entities/binance/is_shareable. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:33,449 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-4) No content type specified in response from /transfers?base=binance&flow=out&usdGte=0.1&sortKey=time&sortDir=desc&limit=16&offset=0. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:34,361 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-6) Cannot decode unsupported content encoding type br 
-[WARN  2024-05-08T13:49:34,361 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-6) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
-[WARN  2024-05-08T13:49:37,091 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-2) No content type specified in response from /tokens/valentine-floki.png. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:37,096 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-5) No content type specified in response from /tokens/pola.png. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:37,104 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-2) No content type specified in response from /tokens/aave-v3-arb.png. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:37,105 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-6) No content type specified in response from /tokens/verso.png. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:37,109 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-5) No content type specified in response from /tokens/pearl-finance.png. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:37,115 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-1) No content type specified in response from /tokens/nbl.png. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:37,116 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-2) No content type specified in response from /tokens/monkey-peepo.png. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:37,120 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-6) No content type specified in response from /tokens/all-street-bets.png. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:37,121 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-5) No content type specified in response from /tokens/token-dforce-usd.png. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:37,125 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-3) No content type specified in response from /tokens/avaxtars.png. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:37,127 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-1) No content type specified in response from /tokens/mchain-network.png. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:37,127 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-2) No content type specified in response from /tokens/higher.png. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:37,130 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-2) No content type specified in response from /tokens/pangolin.png. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:37,132 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-5) No content type specified in response from /tokens/fomo-bull-club.png. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:37,137 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-6) No content type specified in response from /tokens/wonderland.png. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:37,140 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-2) No content type specified in response from /tokens/kimbo.png. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:37,141 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-1) No content type specified in response from /tokens/husky-avax.png. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:37,144 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-5) No content type specified in response from /tokens/dogwifhat-base.png. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:37,147 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-2) No content type specified in response from /tokens/avalaunch.png. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:37,147 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-6) No content type specified in response from /tokens/level.png. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:37,149 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-2) No content type specified in response from /tokens/shrapnel-2.png. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:37,150 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-3) No content type specified in response from /tokens/zjoe.png. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:37,152 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-1) No content type specified in response from /tokens/kong.png. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:37,153 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-5) No content type specified in response from /tokens/bear-2.png. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:37,157 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-2) No content type specified in response from /tokens/vertex-protocol.png. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:37,157 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-6) No content type specified in response from /tokens/dxdao.png. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:37,160 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-2) No content type specified in response from /tokens/magic-internet-money-arbitrum.png. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:37,168 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-5) No content type specified in response from /tokens/stake-dao.png. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:37,170 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-6) No content type specified in response from /tokens/coq-inu.png. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:37,171 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-2) No content type specified in response from /tokens/crypto-royale.png. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:37,174 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-1) No content type specified in response from /tokens/grape-finance.png. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:37,176 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-2) No content type specified in response from /tokens/wine-shares.png. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:37,179 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-3) No content type specified in response from /tokens/mu-coin.png. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:37,184 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-2) No content type specified in response from /chains/bsc.png. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:37,188 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-5) No content type specified in response from /chains/manta.png. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:37,189 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-6) No content type specified in response from /chains/flare.png. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:37,526 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-6) No content type specified in response from /api/mp/track/?verbose=1&ip=1&_=1715147377226. Content will be treated as application/octet-stream 
-[WARN  2024-05-08T13:49:47,713 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-4) No content type specified in response from /transfers?sortKey=time&sortDir=desc&limit=16&offset=16&flow=out&base=binance&usdGte=0.1. Content will be treated as application/octet-stream 
