@@ -170,7 +170,7 @@ def open_csv_file(csv_file_path):
     result = messagebox.askquestion('Open File', 'Open output CSV file?')
 
     if result == 'yes':
-        subprocess.call(["open", csv_file_path])
+        subprocess.call(["start", csv_file_path], shell=True)
 
 # Main execution
 if __name__ == "__main__":
