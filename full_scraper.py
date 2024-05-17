@@ -1,3 +1,4 @@
+import os
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -19,11 +20,7 @@ import subprocess
 def scrape_data():
     url = "https://platform.arkhamintelligence.com/explorer/entity/binance"
 
-    geckodriver_path = "C:\\Users\\franc\\Repositories\\arkham-scraper\\geckodriver_win32.exe"
-    firefox_binary_path = "C:\\Program Files\\Mozilla Firefox\\firefox.exe"
-
     # Start the BrowserMob Proxy server
-    bmp_path = "C:\\Users\\franc\\Repositories\\arkham-scraper\\browsermob-proxy-2.1.4\\bin\\browsermob-proxy"
     server = Server(bmp_path)
     server.start()
     proxy = server.create_proxy()
@@ -95,7 +92,7 @@ def scrape_data():
             #     print(f"No request found for offset {offset}")
 
         # log the found network traffic to a json file
-        with open("demo.json", "w", encoding='utf-8') as f:
+        with open(json_file_path, "w", encoding='utf-8') as f:
             json.dump(traffic, f, ensure_ascii=False, indent=4)
         # if there's no error, print success message
         print("Scraping successful!")
@@ -108,6 +105,7 @@ def scrape_data():
         driver.quit()
         server.stop()
         # time.sleep(120)  # Delay for 2 minutes
+
 def write_transfers_to_csv(json_file_path, csv_file_path):
     # Open the JSON file and load the data
     with open(json_file_path, 'r', encoding='utf-8') as json_file:
@@ -170,16 +168,24 @@ def open_csv_file(csv_file_path):
     result = messagebox.askquestion('Open File', 'Open output CSV file?')
 
     if result == 'yes':
-        subprocess.call(["start", csv_file_path], shell=True)
+        subprocess.call(["open", csv_file_path], shell=True)
 
 # Main execution
 if __name__ == "__main__":
-    # download_folder = "/Users/fjnervida/Documents"  # path of download folder
-    # download_folder = "C:\\Users\\franc\\Repositories\\arkham-scraper"
-    # Path to the JSON file
-    json_file_path = 'C:\\Users\\franc\\Repositories\\arkham-scraper\\demo.json'
-    # Path to the output CSV file
-    csv_file_path = 'C:\\Users\\franc\\Repositories\\arkham-scraper\\output_clean.csv'
+    # Detect the operating system
+    if os.name == 'nt':  # Windows
+        geckodriver_path = "C:\\Users\\franc\\Repositories\\arkham-scraper\\geckodriver_win32.exe"
+        firefox_binary_path = "C:\\Program Files\\Mozilla Firefox\\firefox.exe"
+        bmp_path = "C:\\Users\\franc\\Repositories\\arkham-scraper\\browsermob-proxy-2.1.4\\bin\\browsermob-proxy"
+        json_file_path = 'C:\\Users\\franc\\Repositories\\arkham-scraper\\demo.json'
+        csv_file_path = 'C:\\Users\\franc\\Repositories\\arkham-scraper\\output_clean.csv'
+    else:  # Mac
+        geckodriver_path = "/Users/fjnervida/Downloads/arkham-scraper-main/geckodriver_mac"
+        firefox_binary_path = "/Applications/Firefox.app/Contents/MacOS/firefox"
+        bmp_path = "/Users/fjnervida/Downloads/arkham-scraper-main/browsermob-proxy-2.1.4/bin/browsermob-proxy"
+        json_file_path = '/Users/fjnervida/Downloads/arkham-scraper-main/demo.json'
+        csv_file_path = '/Users/fjnervida/Downloads/arkham-scraper-main/output_clean.csv'
+
     scrape_data()
     write_transfers_to_csv(json_file_path, csv_file_path)
     open_csv_file(csv_file_path)
